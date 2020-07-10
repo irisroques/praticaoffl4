@@ -1,0 +1,14 @@
+package entidades;
+
+import java.util.Date;
+
+public class Alimento extends Produto{
+	
+    public Alimento(String nome, int codigo, double preco, TipoProduto tipo, Date validade) {
+		super(nome, codigo, preco, tipo);
+		// TODO Auto-generated constructor stub
+		this.validade = validade;
+	}
+
+	Date validade;
+}

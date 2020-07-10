@@ -1,0 +1,34 @@
+package entidades;
+
+public abstract class Produto{
+    String nome;
+    int codigo;
+    public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public int getCodigo() {
+		return codigo;
+	}
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+	public double getPreco() {
+		return preco;
+	}
+	public void setPreco(double preco) {
+		this.preco = preco;
+	}
+	public TipoProduto getTipo() {
+		return tipo;
+	}
+	public void setTipo(TipoProduto tipo) {
+		this.tipo = tipo;
+	}
+	double preco;
+    TipoProduto tipo;
+
+    /* generate getters and setters*/
+}

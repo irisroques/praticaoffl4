@@ -1,0 +1,5 @@
+package dao;
+
+public class EletroeletronicoDAOImpl implements EletroeletronicoDAO<Eletroeletronico> {
+
+}

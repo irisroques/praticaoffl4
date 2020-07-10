@@ -1,0 +1,61 @@
+package entidades;
+
+public class Roupa extends Produto{
+    char tamanho;
+
+	public char getTamanho() {
+		return tamanho;
+	}
+
+	public void setTamanho(char tamanho) {
+		this.tamanho = tamanho;
+	}
+
+	@Override
+	public String getNome() {
+		// TODO Auto-generated method stub
+		return super.getNome();
+	}
+
+	@Override
+	public void setNome(String nome) {
+		// TODO Auto-generated method stub
+		super.setNome(nome);
+	}
+
+	@Override
+	public int getCodigo() {
+		// TODO Auto-generated method stub
+		return super.getCodigo();
+	}
+
+	@Override
+	public void setCodigo(int codigo) {
+		// TODO Auto-generated method stub
+		super.setCodigo(codigo);
+	}
+
+	@Override
+	public double getPreco() {
+		// TODO Auto-generated method stub
+		return super.getPreco();
+	}
+
+	@Override
+	public void setPreco(double preco) {
+		// TODO Auto-generated method stub
+		super.setPreco(preco);
+	}
+
+	@Override
+	public TipoProduto getTipo() {
+		// TODO Auto-generated method stub
+		return super.getTipo();
+	}
+
+	@Override
+	public void setTipo(TipoProduto tipo) {
+		// TODO Auto-generated method stub
+		super.setTipo(tipo);
+	}
+}
