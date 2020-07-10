@@ -1,0 +1,5 @@
+package lojasd.entidades;
+
+public class Alimento extends Produto{
+    Date validade;
+}

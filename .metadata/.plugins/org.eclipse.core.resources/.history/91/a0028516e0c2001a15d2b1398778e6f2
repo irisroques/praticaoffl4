@@ -1,0 +1,5 @@
+package lojasd.dao;
+
+public Interface AlimentoDAO<Alimento>{
+    
+}

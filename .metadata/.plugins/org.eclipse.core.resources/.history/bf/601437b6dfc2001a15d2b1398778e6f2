@@ -1,0 +1,10 @@
+package lojasd.entidades;
+
+public abstract class Produto{
+    String nome;
+    int codigo;
+    double preco;
+    TipoProduto tipo;
+
+    /* generate getters and setters*/
+}

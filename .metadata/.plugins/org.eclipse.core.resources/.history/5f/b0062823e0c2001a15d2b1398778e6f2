@@ -1,0 +1,5 @@
+package lojasd.dao;
+
+public interface EletroeletronicoDAO<Eletroeletronico>{
+    
+}
