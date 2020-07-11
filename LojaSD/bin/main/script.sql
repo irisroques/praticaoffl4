@@ -4,7 +4,8 @@ CREATE TABLE roupas(
 	PRIMARY KEY(codigo),
 	preco NUMERIC(2),
 	tipo VARCHAR(10),
-	tamanho VARCHAR(1)
+	tamanho VARCHAR(1),
+	quantidade INT
 );
 CREATE TABLE alimentos(
 	nome VARCHAR(20),
@@ -12,7 +13,8 @@ CREATE TABLE alimentos(
 	PRIMARY KEY(codigo),
 	preco NUMERIC(2),
 	tipo VARCHAR(10),
-	validade DATE
+	validade DATE,
+	quantidade INT
 );
 CREATE TABLE eletroeletronicos(
 	nome VARCHAR(20),
@@ -20,5 +22,6 @@ CREATE TABLE eletroeletronicos(
 	PRIMARY KEY(codigo),
 	preco NUMERIC(2),
 	tipo VARCHAR(10),
-	marca VARCHAR(10)
+	marca VARCHAR(10),
+	quantidade INT
 );

@@ -1,8 +1,8 @@
 package entidades;
 
 public class Roupa extends Produto{
-    public Roupa(String nome, int codigo, double preco, TipoProduto tipo, char tamanho) {
-		super(nome, codigo, preco, tipo);
+    public Roupa(String nome, int codigo, double preco, TipoProduto tipo, char tamanho, int quantidade) {
+		super(nome, codigo, preco, tipo, quantidade);
 		this.tamanho = tamanho;
 		// TODO Auto-generated constructor stub
 	}

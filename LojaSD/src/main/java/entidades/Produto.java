@@ -5,13 +5,18 @@ public abstract class Produto{
   private  int codigo;
   private  double preco;
   private  TipoProduto tipo;
+  private int quantidade;
     
-	public Produto(String nome, int codigo, double preco, TipoProduto tipo) {
+	public Produto(String nome, int codigo, double preco, TipoProduto tipo, int quantidade) {
 		this.nome = nome;
 		this.codigo = codigo;
 		this.preco = preco;
 		this.tipo = tipo;
+		this.quantidade = quantidade;
 	}
+	
+
+
 	public String getNome() {
 		return nome;
 	}
@@ -35,6 +40,12 @@ public abstract class Produto{
 	}
 	public void setTipo(TipoProduto tipo) {
 		this.tipo = tipo;
+	}
+	public int getQuantidade() {
+		return quantidade;
+	}
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
 	}
     
     
