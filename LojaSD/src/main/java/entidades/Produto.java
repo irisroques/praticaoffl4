@@ -35,8 +35,8 @@ public abstract class Produto{
 	public void setPreco(double preco) {
 		this.preco = preco;
 	}
-	public TipoProduto getTipo() {
-		return tipo;
+	public String getTipo() {
+		return tipo.toString();
 	}
 	public void setTipo(TipoProduto tipo) {
 		this.tipo = tipo;

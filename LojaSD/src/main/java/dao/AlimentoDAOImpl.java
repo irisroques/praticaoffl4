@@ -10,6 +10,7 @@ public class AlimentoDAOImpl implements AlimentoDAO<Alimento> {
 	public void adicionar(Alimento a) {
 		// TODO Auto-generated method stub
 		
+		
 	}
 
 	@Override

@@ -4,6 +4,17 @@
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="entidades.Alimento"/>
     <fullyQualifiedTypeName name="entidades.Eletroeletronico"/>
-    <fullyQualifiedTypeName name="entidades.Roupa"/>
+    <fullyQualifiedTypeName name="com.mongodb.MongoClientURI"/>
+    <fullyQualifiedTypeName name="com.mongodb.MongoClient"/>
     <fullyQualifiedTypeName name="com.mongodb.client.MongoDatabase"/>
+    <fullyQualifiedTypeName name="com.mongodb.DB"/>
+    <fullyQualifiedTypeName name="java.sql.DriverManager"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="util.ConectorBD"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="entidades.Roupa"/>
+    <fullyQualifiedTypeName name="dao.RoupaDAOImpl"/>
+    <fullyQualifiedTypeName name="dao.RoupaDAO"/>
+    <fullyQualifiedTypeName name="entidades.TipoProduto"/>
 </qualifiedTypeNameHistroy>

@@ -1,8 +1,10 @@
 package servidor;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
+
+import dao.RoupaDAOImpl;
+import entidades.Roupa;
+import entidades.TipoProduto;
 import util.ConectorBD;
 
 
@@ -28,7 +30,9 @@ public class Main {
 				   
 		   //fim da conexão do banco de dados
 		   
-		   
+		   Roupa roupa = new Roupa("roupinha", 1234, 43.23, TipoProduto.ROUPA, "M" , 3);
+		   RoupaDAOImpl roupadao = new RoupaDAOImpl();
+		   roupadao.adicionar(roupa);
 		  
 	}
 
