@@ -15,6 +15,7 @@ repositories {
     // Use jcenter for resolving dependencies.
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
+    
 }
 
 dependencies {
@@ -26,4 +27,9 @@ dependencies {
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
+    
+   	// https://mvnrepository.com/artifact/org.mongodb/mongodb-driver
+	compile 'org.mongodb:mongodb-driver-sync:4.0.5'
+   	compile 'org.mongodb:mongodb-driver-legacy:4.0.5'
+    
 }

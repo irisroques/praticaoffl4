@@ -1,0 +1,23 @@
+package util;
+
+import com.mongodb.ConnectionString;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.MongoClient;
+import com.mongodb.MongoClientURI;
+
+public class ConectorBD {
+	
+
+
+
+	MongoClientURI uri = new MongoClientURI(
+	    "mongodb+srv://SDistribuidos:<password>@lojasd.s5whu.azure.mongodb.net/<dbname>?retryWrites=true&w=majority");
+	
+	MongoClient mongoClient = new MongoClient(uri);
+	MongoDatabase database = mongoClient.getDatabase("test");
+
+	
+		
+			
+}

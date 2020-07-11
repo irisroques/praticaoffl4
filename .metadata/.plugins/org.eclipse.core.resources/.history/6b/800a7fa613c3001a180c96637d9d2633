@@ -1,0 +1,7 @@
+CREATE TABLE produtos(
+	nome VARCHAR(30),
+	codigo SERIAL PRIMARY KEY,
+	preco NUMERIC(2),
+	
+);
+
