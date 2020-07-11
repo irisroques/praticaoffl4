@@ -5,4 +5,5 @@
     <fullyQualifiedTypeName name="entidades.Alimento"/>
     <fullyQualifiedTypeName name="entidades.Eletroeletronico"/>
     <fullyQualifiedTypeName name="entidades.Roupa"/>
+    <fullyQualifiedTypeName name="com.mongodb.client.MongoDatabase"/>
 </qualifiedTypeNameHistroy>

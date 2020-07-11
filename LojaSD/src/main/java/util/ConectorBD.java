@@ -1,23 +1,28 @@
 package util;
 
-import com.mongodb.ConnectionString;
-import com.mongodb.client.MongoClients;
-import com.mongodb.client.MongoDatabase;
-import com.mongodb.MongoClient;
-import com.mongodb.MongoClientURI;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class ConectorBD {
 	
-	MongoClientURI uri = new MongoClientURI(
-	    "mongodb+srv://SDistribuidos:<password>@lojasd.s5whu.azure.mongodb.net/<dbname>?retryWrites=true&w=majority");
-	
-	MongoClient mongoClient = new MongoClient(uri);
-	MongoDatabase database = mongoClient.getDatabase("test");
 
-	
-		/*
-		 * http://mongodb.github.io/mongo-java-driver/4.0/driver/getting-started/quick-start/
-		 * https://cloud.mongodb.com/v2/5f09136b015c1a18c5b57f8b#clusters/commandLineTools/LojaSD
-		 *  */
+	 static String url = "jdbc:postgresql://hansken.db.elephantsql.com:5432/lnukqknr";
+	 static String user = "lnukqknr";
+	 static String password = "JhpISOBwY-dMXnSId6e6Ct7ae6b_2bms";
+	 static Connection con;
+
+	public static Connection getConexao() throws SQLException {
+		try {
+			Class.forName("org.postgresql.Driver");
+			if(con == null){
+				con = (Connection) DriverManager.getConnection(url, user, password);
+			}
+			return con;
+		}catch(ClassNotFoundException e) {
+			throw new SQLException(e.getMessage());
+		}
+	}
+
 			
 }

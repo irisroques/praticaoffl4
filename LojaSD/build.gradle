@@ -28,8 +28,8 @@ dependencies {
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
     
-   	// https://mvnrepository.com/artifact/org.mongodb/mongodb-driver
-	compile 'org.mongodb:mongodb-driver-sync:4.0.5'
-   	compile 'org.mongodb:mongodb-driver-legacy:4.0.5'
+		// https://mvnrepository.com/artifact/org.postgresql/postgresql
+	compile group: 'org.postgresql', name: 'postgresql', version: '42.1.4'
+		
     
 }
