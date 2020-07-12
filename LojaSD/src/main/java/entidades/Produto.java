@@ -1,7 +1,10 @@
 package entidades;
 
-public abstract class Produto{
-  private  String nome;
+import java.io.Serializable;
+
+public abstract class Produto implements Serializable{
+
+private  String nome;
   private  int codigo;
   private  double preco;
   private  TipoProduto tipo;

@@ -1,38 +1,41 @@
 package servidor;
 
-import java.sql.SQLException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+import java.rmi.server.UnicastRemoteObject;
 
+import dao.RoupaDAO;
 import dao.RoupaDAOImpl;
 import entidades.Roupa;
 import entidades.TipoProduto;
-import util.ConectorBD;
 
 
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		//conexão com o banco de dados
-        try {
-            Class.forName("org.postgresql.Driver");
-        }
-        catch (java.lang.ClassNotFoundException e) {
-            System.out.println(e.getMessage());
-        }
-        
-        try {
-			ConectorBD.getConexao();
-			System.out.println("conexão bem sucedida");
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+		
+		System.setProperty("java.rmi.server.hostname", "127.0.0.1");
+		
+		try {
+			
+			RoupaDAOImpl refObjRemoto = new RoupaDAOImpl();
+			RoupaDAO skeleton = (RoupaDAO) UnicastRemoteObject.exportObject(refObjRemoto,0);
+			
+			LocateRegistry.createRegistry(10001);
+			
+			Registry registro = LocateRegistry.getRegistry(10001);
+			
+			registro.bind("RoupaDAO", skeleton);
+			
+			System.err.println("servidor pronto");
+			
+
+		} catch(Exception e) {
+			System.err.println("Server Exception" + e.toString());
 			e.printStackTrace();
 		}
-				   
-		   //fim da conexão do banco de dados
 		   
-		   Roupa roupa = new Roupa("roupinha", 1234, 43.23, TipoProduto.ROUPA, "M" , 3);
-		   RoupaDAOImpl roupadao = new RoupaDAOImpl();
-		   roupadao.adicionar(roupa);
+
 		  
 	}
 

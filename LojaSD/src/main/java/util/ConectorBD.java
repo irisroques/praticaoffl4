@@ -6,6 +6,8 @@ import java.sql.SQLException;
 
 public class ConectorBD {
 	
+	
+	
 
 	 static String url = "jdbc:postgresql://hansken.db.elephantsql.com:5432/lnukqknr";
 	 static String user = "lnukqknr";
@@ -13,6 +15,14 @@ public class ConectorBD {
 	 static Connection con;
 
 	public static Connection getConexao() throws SQLException {
+		
+        try {
+            Class.forName("org.postgresql.Driver");
+        }
+        catch (java.lang.ClassNotFoundException e) {
+            System.out.println(e.getMessage());
+        }
+        
 		try {
 			Class.forName("org.postgresql.Driver");
 			if(con == null){
