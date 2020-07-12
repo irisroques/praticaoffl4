@@ -20,6 +20,12 @@ private  String nome;
 	
 
 
+	public Produto() {
+		super();
+	}
+
+
+
 	public String getNome() {
 		return nome;
 	}

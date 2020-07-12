@@ -8,6 +8,10 @@ public class Roupa extends Produto{
 	}
 
 
+	public Roupa() {
+		
+	}
+
 
 	String tamanho;
 
