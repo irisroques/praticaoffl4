@@ -8,6 +8,7 @@ import java.util.List;
 
 import entidades.Produto;
 import entidades.Roupa;
+import entidades.TipoProduto;
 import util.ConectorBD;
 
 public class RoupaDAOImpl implements RoupaDAO<Roupa> {
@@ -28,6 +29,7 @@ public class RoupaDAOImpl implements RoupaDAO<Roupa> {
 			ps.setInt(6, roupa.getQuantidade());
 			
 			ps.execute();
+			System.out.println("Adicionado com sucesso");
 		} catch(SQLException e) {
 			e.printStackTrace();
 		}
@@ -46,30 +48,39 @@ public class RoupaDAOImpl implements RoupaDAO<Roupa> {
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
 				r.setNome(rs.getString("nome"));
+				r.setCodigo(rs.getInt("codigo"));
+				r.setPreco(rs.getDouble("preco"));
+				r.setTipo(TipoProduto.ROUPA);
+				r.setTamanho(rs.getString("tamaho"));
 				r.setQuantidade(rs.getInt("quantidade"));
 				list.add(r);
-				
 			}
+			rs.close();
 		} catch(SQLException e) {e.printStackTrace();}
 		
 		return list;
 	}
 
 	@Override
-	public String listarAlimento(int codigo) {
+	public String listarRoupa(int codigo) {
 		// TODO Auto-generated method stub
 		Roupa r = new Roupa();
 		String sql = "SELECT * FROM roupas WHERE codigo=?";
 		try {
 			PreparedStatement ps = ConectorBD.getConexao().prepareStatement(sql);
 			ps.setInt(1, r.getCodigo());
-			ps.execute();
-			//ResultSet rs = ps.executeQuery();
-			/* while(rs.next()) {
+			
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
 				r.setNome(rs.getString("nome"));
-			} */
+			
+			System.out.println(r.getNome().toString());
+			} 
+			
 			
 		} catch(SQLException e) {e.printStackTrace();}
+		System.out.println(r.getNome());
 		return r.getNome();
 	}
 
@@ -87,13 +98,19 @@ public class RoupaDAOImpl implements RoupaDAO<Roupa> {
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
 				r.setNome(rs.getString("nome"));
+				r.setCodigo(rs.getInt("codigo"));
+				r.setPreco(rs.getDouble("preco"));
+				r.setTipo(TipoProduto.ROUPA);
+				r.setTamanho(rs.getString("tamaho"));
 				r.setQuantidade(rs.getInt("quantidade"));
 				list.add(r);
-				
+
 			}
+			rs.close();
+			
 		} catch(SQLException e) {e.printStackTrace();}
+		return list;
 		
-		return null;
 	}
 
 	@Override
