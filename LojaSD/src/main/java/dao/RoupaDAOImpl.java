@@ -40,31 +40,58 @@ public class RoupaDAOImpl implements RoupaDAO<Roupa> {
 		// TODO Auto-generated method stub
 		List<Roupa> list = new ArrayList<Roupa>();
 		String sql = "SELECT * FROM roupas";
-		PreparedStatement ps;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
 		
 		try {
-			Roupa r = new Roupa();
+			
 			ps = ConectorBD.getConexao().prepareStatement(sql);
-			ResultSet rs = ps.executeQuery();
+			rs = ps.executeQuery();
 			while(rs.next()) {
+				
+				Roupa r = new Roupa();
+				
 				r.setNome(rs.getString("nome"));
 				r.setCodigo(rs.getInt("codigo"));
 				r.setPreco(rs.getDouble("preco"));
 				r.setTipo(TipoProduto.ROUPA);
-				r.setTamanho(rs.getString("tamaho"));
+				r.setTamanho(rs.getString("tamanho"));
 				r.setQuantidade(rs.getInt("quantidade"));
 				list.add(r);
 			}
-			rs.close();
+			
 		} catch(SQLException e) {e.printStackTrace();}
+		
+		finally{
+			 
+			 try{
+			 
+			 if(rs != null){
+			 
+			 rs.close();
+			 }
+			 
+			 if(ps != null){
+			 
+			 ps.close();
+			 }
+			 
+			
+			 
+			 }catch(Exception e){
+			 
+			 e.printStackTrace();
+			 }
+			 }
 		
 		return list;
 	}
 
 	@Override
-	public String listarRoupa(int codigo) {
+	public List<Roupa> listarRoupa(int codigo) {
 		// TODO Auto-generated method stub
 		Roupa r = new Roupa();
+		List<Roupa> list = new ArrayList<Roupa>();
 		String sql = "SELECT * FROM roupas WHERE codigo=?";
 		try {
 			PreparedStatement ps = ConectorBD.getConexao().prepareStatement(sql);
@@ -72,16 +99,23 @@ public class RoupaDAOImpl implements RoupaDAO<Roupa> {
 			
 			ResultSet rs = ps.executeQuery();
 			
-			while(rs.next()) {
+				while(rs.next()) {
+				
+				
+				
 				r.setNome(rs.getString("nome"));
-			
-			System.out.println(r.getNome().toString());
-			} 
+				r.setCodigo(rs.getInt("codigo"));
+				r.setPreco(rs.getDouble("preco"));
+				r.setTipo(TipoProduto.ROUPA);
+				r.setTamanho(rs.getString("tamanho"));
+				r.setQuantidade(rs.getInt("quantidade"));
+				list.add(r);
+			}
 			
 			
 		} catch(SQLException e) {e.printStackTrace();}
 		System.out.println(r.getNome());
-		return r.getNome();
+		return list;
 	}
 
 	@Override
@@ -114,14 +148,19 @@ public class RoupaDAOImpl implements RoupaDAO<Roupa> {
 	}
 
 	@Override
-	public void update(int codigo, double preco) {
+	public void update(Roupa roupa) {
 		// TODO Auto-generated method stub
-		Roupa r = new Roupa();
-		String sql = "UPDATE roupas SET preco =? WHERE codigo =?";
+		PreparedStatement ps = null;
+		String sql = "UPDATE roupas SET nome = ? preco = ? tipo = ? tamanho = ?, quantidade WHERE codigo = ?";
 		try {
-			PreparedStatement ps = ConectorBD.getConexao().prepareStatement(sql);
-			ps.setDouble(1, r.getCodigo());
-			ps.setInt(2, r.getCodigo());
+			ps = ConectorBD.getConexao().prepareStatement(sql);
+			ps.setString(1, roupa.getNome());
+			ps.setDouble(2, roupa.getPreco());
+			ps.setString(3, roupa.getTamanho());
+			ps.setInt(4, roupa.getQuantidade());
+			ps.setInt(5, roupa.getCodigo());
+			ps.execute();
+			System.out.println("Item alterado");
 		} catch(SQLException e) {
 			e.printStackTrace();
 		}
@@ -129,12 +168,13 @@ public class RoupaDAOImpl implements RoupaDAO<Roupa> {
 
 	@Override
 	public void remove(int codigo) {
-		Roupa r = new Roupa();
 		String sql = "DELETE FROM roupas WHERE codigo = ?";
+		PreparedStatement pstm = null;
 		try {
-			PreparedStatement ps = ConectorBD.getConexao().prepareStatement(sql);
-			ps.setInt(1, r.getCodigo());
-			ps.execute();
+			pstm = ConectorBD.getConexao().prepareStatement(sql);
+			pstm.setInt(1, codigo);
+			pstm.execute();
+			System.out.println("Deletado com sucesso");
 		} catch(SQLException e) {e.printStackTrace();}
 		// TODO Auto-generated method stub
 		

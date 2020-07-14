@@ -4,6 +4,7 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 
+import dao.AlimentoDAOImpl;
 import dao.RoupaDAO;
 import dao.RoupaDAOImpl;
 import entidades.Roupa;
@@ -20,6 +21,8 @@ public class Main {
 			
 			RoupaDAOImpl refObjRemoto = new RoupaDAOImpl();
 			RoupaDAO skeleton = (RoupaDAO) UnicastRemoteObject.exportObject(refObjRemoto,0);
+			
+			//AlimentoDAOImpl refObjAlimento = new AlimentoDAOImpl();
 			
 			LocateRegistry.createRegistry(10001);
 			

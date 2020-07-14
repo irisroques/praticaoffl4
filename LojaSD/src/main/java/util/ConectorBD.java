@@ -6,9 +6,6 @@ import java.sql.SQLException;
 
 public class ConectorBD {
 	
-	
-	
-
 	 static String url = "jdbc:postgresql://hansken.db.elephantsql.com:5432/lnukqknr";
 	 static String user = "lnukqknr";
 	 static String password = "JhpISOBwY-dMXnSId6e6Ct7ae6b_2bms";
