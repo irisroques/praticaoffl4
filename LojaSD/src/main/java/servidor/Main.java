@@ -28,7 +28,7 @@ public class Main {
 			
 			Registry registro = LocateRegistry.getRegistry(10001);
 			
-			registro.bind("RoupaDAO", skeleton);
+			 registro.bind("RoupaDAO", skeleton);
 			
 			System.err.println("servidor pronto");
 			

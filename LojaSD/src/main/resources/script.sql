@@ -26,3 +26,13 @@ CREATE TABLE eletroeletronicos(
 	quantidade INT
 );
 
+CREATE TABLE funcionario(
+	matricula int,
+	PRIMARY KEY(int),
+	nome varchar(20),
+	cpf varchar(11),
+	cargo varchar(11),
+	salario REAL,
+	login VARCHAR(10),
+	senha VARCHAR(50)
+);

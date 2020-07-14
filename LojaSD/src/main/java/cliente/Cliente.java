@@ -1,5 +1,6 @@
 package cliente;
 
+import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.util.Iterator;
@@ -15,6 +16,22 @@ public class Cliente {
 	
 	private Cliente() {}
 	
+/*	synchronized Registry auth(String host, String login, String senha) {
+		Registry registro = null;
+		if(login == "usuario" && senha=="1234") {
+			
+			try {
+				registro = LocateRegistry.getRegistry(host, 10001);
+			} catch (RemoteException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+
+		return registro;
+	}
+	*/
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
